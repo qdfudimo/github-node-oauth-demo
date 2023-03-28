@@ -27,7 +27,7 @@ $ npm install
 ## 启动服务端
 
 ```bash
-$ node index.js
+$ nodemon ./index.js
 ```
 
 ```js
@@ -36,9 +36,13 @@ const clientSecret = "YOUR_CLIENT_SECRET";
 ```
 
 - `index.js`: 将 `clientID` 和 `clientSecret` 替换成自己的github秘钥和ID.
-服务端默认端口 http://localhost:8080 
+- 服务端默认端口 http://localhost:8080 
 
-- 页面启动
+`ctx.response.redirect(`http://localhost:5173/#/personInfo?login=${login}&bio=${bio}&html_url=${html_url}&avatar_url=${avatar_url}`);`
+
+重定向至授权成功界面 并返回获取到的用户信息
+
+## 页面启动
 
 ```bash
 $ cd ./github-oauth
@@ -55,7 +59,7 @@ $ pnpm dev
 
 ![image](https://github.com/qdfudimo/MarkdownImage/blob/master/oauth.jpg)
 
-授权成功
+授权成功服务器返回的数据
 
 ```js
 //之类信息
